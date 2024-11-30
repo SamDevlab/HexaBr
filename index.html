@@ -193,6 +193,103 @@ h6 {
 
 #footer-links ul li a:hover {
     text-decoration: underline;
+
+
+/* Media Queries para responsividade */
+@media (max-width: 1200px) {
+    #header ul {
+        margin-left: auto;
+        gap: 40px;
+    }
+
+    #container_banner {
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    #Hexa {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .container_conteudo {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    ul {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 0;
+        gap: 20px;
+        font-size: 18px;
+    }
+
+    .logo {
+        margin: 0 auto 20px;
+    }
+
+    #container_banner h1 {
+        font-size: 1.8rem;
+    }
+
+    #container_banner p {
+        font-size: 1rem;
+    }
+
+    footer {
+        padding: 20px 10px;
+    }
+
+    #footer-links ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #header ul {
+        font-size: 16px;
+    }
+
+    #container_banner h1 {
+        font-size: 1.5rem;
+    }
+
+    #container_banner p {
+        font-size: 0.9rem;
+    }
+
+    .container_conteudo {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #email {
+        width: 100%;
+    }
+
+    #submit-button {
+        width: 100%;
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    h6 {
+        font-size: 1.2rem;
+    }
+}
+
 }
     </style>
 <body>
@@ -233,8 +330,8 @@ h6 {
     <footer>
         <div id="footer-container">
             <h6>Cadastre seu e-mail para receber atualizações</h6>
-            <form action="#" method="POST" id="newsletter-form">
-                <input type="email" placeholder="Digite seu e-mail" id="email" required>
+            <form action="http://localhost:8081/submit-email" method="POST" id="newsletter-form">
+                <input type="email" name="email" placeholder="Digite seu e-mail" id="email" required>
                 <button type="submit" id="submit-button">Cadastrar</button>
             </form>
             <div id="footer-links">
